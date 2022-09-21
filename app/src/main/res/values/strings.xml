@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">skrabol</string>
+    <string name="main_dict">Dictionary</string>
+    <string name="main_game">Game Word</string>
+    <string name="main_board">Game Board</string>
+    <string name="main_title">SKRABOL</string>
+    <string name="dict_update">Update</string>
+    <string name="dict_search">Search</string>
+    <string name="dict_run">Populate</string>
+    <string name="dict_word">Word Here</string>
+    <string name="dict_details">Details Here</string>
+</resources>

@@ -1,0 +1,940 @@
+[
+  {
+    "id": "ae1319ec9cdde53b57153c557842b893",
+    "document_id": "332f9751244e0199b21f019af09f18d3",
+    "remote_id": "",
+    "file_name": "kapamdict-16-32.pdf",
+    "media_link": "https:\/\/api.docparser.com\/v1\/document\/media\/lHnNPRI-L7Rv8j1YA57Kx-h2XKzmOkYaYIU0bItp-bQ8gLF-5f3m6HzZR0VhRvclTUKW3IIJGJgEOwFaSVl451h_2n2bn_fKMG8kMe9cm8I",
+    "media_link_original": "https:\/\/api.docparser.com\/v1\/document\/media\/lHnNPRI-L7Rv8j1YA57Kx-h2XKzmOkYaYIU0bItp-bQ8gLF-5f3m6HzZR0VhRvclTUKW3IIJGJgEOwFaSVl451h_2n2bn_fKMG8kMe9cm8I\/original",
+    "media_link_data": "https:\/\/api.docparser.com\/v1\/document\/media\/lHnNPRI-L7Rv8j1YA57Kx-h2XKzmOkYaYIU0bItp-bQ8gLF-5f3m6HzZR0VhRvclTUKW3IIJGJgEOwFaSVl451h_2n2bn_fKMG8kMe9cm8I\/data",
+    "page_count": 17,
+    "uploaded_at": "2022-09-20T00:20:28+00:00",
+    "processed_at": "2022-09-20T00:23:07+00:00",
+    "uploaded_at_utc": "2022-09-20T00:20:28+00:00",
+    "uploaded_at_user": "2022-09-19T16:20:28+00:00",
+    "processed_at_utc": "2022-09-20T00:23:07+00:00",
+    "processed_at_user": "2022-09-19T16:23:07+00:00",
+    "table_data": [
+      {
+        "key_0": "a",
+        "key_1": "(Particle). 1. introductory exclamation like English"
+      },
+      {
+        "key_0": "abaka",
+        "key_1": "(N.) the abaca plant, fiber, or cloth."
+      },
+      {
+        "key_0": "a\u2019bak",
+        "key_1": "(V.) mayabak, mayayabak, meyabak; to do"
+      },
+      {
+        "key_0": "abala\u2019",
+        "key_1": "(V.) bother, worry. [usually distributive:"
+      },
+      {
+        "key_0": "a\u2019be",
+        "key_1": "(V.) makiyabe \u2018accompany\u2019; mi-abeyabe \u2018live"
+      },
+      {
+        "key_0": "abi\u2019su",
+        "key_1": "(V.) -an: \u2018to warn someone\u2019; ma-\u2018to be warned\u2019;"
+      },
+      {
+        "key_0": "ablas",
+        "key_1": "(V.) -an \u2018to return something\u2019; imitate. maki- -an \u2018to"
+      },
+      {
+        "key_0": "abo\u2019",
+        "key_1": "(N.) left-over food."
+      },
+      {
+        "key_0": "abo\u2019no",
+        "key_1": "(V.) man- \u2018to fertilize\u2019; pa-\u2018have something"
+      },
+      {
+        "key_0": "abri\u2019l",
+        "key_1": "(N.) the month of April."
+      },
+      {
+        "key_0": "absang",
+        "key_1": "(V.) in-an, mi-an \u2018be swarmed on by tiny insects"
+      },
+      {
+        "key_0": "-absi\u2019q",
+        "key_1": "(V.) magpaka-\u2018eat one\u2019s fill\u2019. See qabsiq."
+      },
+      {
+        "key_0": "abu\u2019",
+        "key_1": "(V.) man-\u2018become ash\u2019; mi-an \u2018get ashes on self\u2019;"
+      },
+      {
+        "key_0": "abuka\u2019du",
+        "key_1": "(N.) avocado (a fruit)."
+      },
+      {
+        "key_0": "abuga\u2019du",
+        "key_1": "(V.) pag-an \u2018submit something to lawyers\u2019."
+      },
+      {
+        "key_0": "abu\u2019lud",
+        "key_1": "(V.) -an [abuluran] \u2018to de-rib (to remove the center"
+      },
+      {
+        "key_0": "abusa\u2019du",
+        "key_1": "(V.) man-, pa-\u2018abuse, take unfair advantage\u2019."
+      },
+      {
+        "key_0": "a\u2019but",
+        "key_1": "(V.) \u2018reach\u2019, \u2018hand something to someone\u2019."
+      },
+      {
+        "key_0": "abya\u2019s",
+        "key_1": "(N.) milled rice. maga:qabyas \u2018rice dealer\u2019"
+      },
+      {
+        "key_0": "aka\u2019sya",
+        "key_1": "(N.) acacia, a kind of tree."
+      },
+      {
+        "key_0": "akba\u2019k",
+        "key_1": "(V.) -an \u2018to put something on a spit\u2019; pa- \u2018to have"
+      },
+      {
+        "key_0": "akbu\u2019ng",
+        "key_1": "(N.) explosion."
+      },
+      {
+        "key_0": "a\u2019kit",
+        "key_1": "(V.) see c.f., -kit. ikit."
+      },
+      {
+        "key_0": "akla\u2019t",
+        "key_1": "(N.) book (more commonly, libru). aklatan \u2018library\u2019."
+      },
+      {
+        "key_0": "akmu\u2019l",
+        "key_1": "(V.) -an \u2018swallow something\u2019; in-\u2018be swallowed\u2019."
+      },
+      {
+        "key_0": "aksaya\u2019q",
+        "key_1": "(D.) extravagant."
+      },
+      {
+        "key_0": "akside\u2019nti",
+        "key_1": "(V.) manga-[distributive] have an accident."
+      },
+      {
+        "key_0": "a\u2019ku",
+        "key_1": "(Substitute: personal pronoun) \u2018I\u2019."
+      },
+      {
+        "key_0": "a:ku",
+        "key_1": "c.f., nga:ku \u2018I said...\u2019."
+      },
+      {
+        "key_0": "adja\u2019r-",
+        "key_1": "(V.) -an \u2018to grate, scrape\u2019."
+      },
+      {
+        "key_0": "-adi\u2019q",
+        "key_1": "(V.) mang- \u2018pray\u2019 (intransitive). pa:ng- \u2018pray for"
+      },
+      {
+        "key_0": "admiru\u2019l",
+        "key_1": "(D.) starched."
+      },
+      {
+        "key_0": "adwa\u2019q",
+        "key_1": "(V.) pangaladwan \u2018do something a second time\u2019."
+      },
+      {
+        "key_0": "aga\u2019d",
+        "key_1": "(Q.) straightaway, immediately."
+      },
+      {
+        "key_0": "agka\u2019t",
+        "key_1": "(V.) summon, invite, signal. man-, -an, pa-, pan-."
+      },
+      {
+        "key_0": "a\u2019giq",
+        "key_1": "(N.) spider web."
+      },
+      {
+        "key_0": "aginaldu",
+        "key_1": "(N.) Christmas gift; see qaginaldu."
+      },
+      {
+        "key_0": "ago\u2019sto",
+        "key_1": "(N.) the month of August."
+      },
+      {
+        "key_0": "agyang",
+        "key_1": "(Q.) even, in spite of."
+      },
+      {
+        "key_0": "agta\u2019l-",
+        "key_1": "(V.) harvest, gather."
+      },
+      {
+        "key_0": "aksaya\u2019q",
+        "key_1": "(D.) extravagant."
+      },
+      {
+        "key_0": "akside\u2019nti",
+        "key_1": "(N.) accident."
+      },
+      {
+        "key_0": "a\u2019gum-",
+        "key_1": "(V.) associate. maki-a\u2019gum \u2018join a group\u2019,"
+      },
+      {
+        "key_0": "a\u2019gus",
+        "key_1": "(N.) current."
+      },
+      {
+        "key_0": "a\u2019gwa-",
+        "key_1": "(N.) a medicinal liquid used to clean wounds."
+      },
+      {
+        "key_0": "sina\u2019da",
+        "key_1": ""
+      },
+      {
+        "key_0": "agya\u2019p",
+        "key_1": "(N.) cold sore."
+      },
+      {
+        "key_0": "agyu\u2019q",
+        "key_1": "(D.) sufficient."
+      },
+      {
+        "key_0": "a\u2019us",
+        "key_1": "(V.) call."
+      },
+      {
+        "key_0": "a\u2019lak",
+        "key_1": "(N.) liquor."
+      },
+      {
+        "key_0": "ala\u2019kdan",
+        "key_1": "(N.) scorpion."
+      },
+      {
+        "key_0": "aladi\u2019n",
+        "key_1": "(N.) a kind of fuel-burning lamp."
+      },
+      {
+        "key_0": "ala\u2019q\/-",
+        "key_1": "(Neg.) none."
+      },
+      {
+        "key_0": "walaq",
+        "key_1": "(V.) manga-\u2018lose things [distributive]\u2019; a:walaq \u2018be"
+      },
+      {
+        "key_0": "-ala\u2019l-",
+        "key_1": "(N.) ala\u2019lan \u2018election\u2019, pa:manala\u2019l \u2018manner of"
+      },
+      {
+        "key_0": "alalay-",
+        "key_1": "(N.) ala\u2019le \u2018care\u2019."
+      },
+      {
+        "key_0": "ala\u2019mbre",
+        "key_1": "(N.) wire. ala\u2019mbring suksukan \u2018barbed wire\u2019."
+      },
+      {
+        "key_0": "alanga:lan",
+        "key_1": "g (N.) palate, roof of mouth. see telabanwa."
+      },
+      {
+        "key_0": "alas",
+        "key_1": "1. in combination with numbers, as alas singko"
+      },
+      {
+        "key_0": "-a\u2019lat",
+        "key_1": "(D.) ma:lat, maalat \u2018salty\u2019, dayat-malat \u2018ocean\u2019."
+      },
+      {
+        "key_0": "alata\u2019q\/",
+        "key_1": "see qalataq\/qalatadu."
+      },
+      {
+        "key_0": "alata\u2019du",
+        "key_1": ""
+      },
+      {
+        "key_0": "albe\u2019",
+        "key_1": "(V.) man-albe \u2018watch\u2019."
+      },
+      {
+        "key_0": "a\u2019lbug",
+        "key_1": "(N.) flood. maki-a\u2019lbug."
+      },
+      {
+        "key_0": "albuga\u2019n",
+        "key_1": "(N.) place where the sun sets."
+      },
+      {
+        "key_0": "albu\u2019l",
+        "key_1": "(N.) a drying device for fishnets."
+      },
+      {
+        "key_0": "albula\u2019ryu",
+        "key_1": "(N.) folk doctor. see (h) ilut."
+      },
+      {
+        "key_0": "alburutu",
+        "key_1": "(N., V.) noise, make noise; see qalburutu."
+      },
+      {
+        "key_0": "aldo\u2019",
+        "key_1": "(N.) sun; day. ganing-aldo \u2018pre-dawn morning\u2019,"
+      },
+      {
+        "key_0": "ali\u2019q",
+        "key_1": "(Neg.) not."
+      },
+      {
+        "key_0": "alikabuk",
+        "key_1": "(N.) dust."
+      },
+      {
+        "key_0": "ali\u2019li-",
+        "key_1": "(V.) alila\u2019n \u2018change something\u2019, man-alili \u2018changing"
+      },
+      {
+        "key_0": "alima\u2019sag",
+        "key_1": "(N.) spotted crab."
+      },
+      {
+        "key_0": "alimba\u2019wa",
+        "key_1": "q (N.) example."
+      },
+      {
+        "key_0": "alimpu\u2019yu",
+        "key_1": "q (N.) mole."
+      },
+      {
+        "key_0": "alipunga\u2019q",
+        "key_1": "(N.) athletes\u2019 foot."
+      },
+      {
+        "key_0": "alistu",
+        "key_1": "(N.) a person who acts skillfully, lively."
+      },
+      {
+        "key_0": "aliwaq",
+        "key_1": "(N.\/D.) other."
+      },
+      {
+        "key_0": "a\u2019lma",
+        "key_1": "(N.) a female name."
+      },
+      {
+        "key_0": "alma\u2019q",
+        "key_1": "(V.) man-almaq \u2018rear up\u2019."
+      },
+      {
+        "key_0": "almura\u2019na",
+        "key_1": "s (N.) hemorrhoids."
+      },
+      {
+        "key_0": "almusal",
+        "key_1": "(N.) breakfast."
+      },
+      {
+        "key_0": "alpa\u2019q",
+        "key_1": "(N.) a kind of vegetable, ampalaya."
+      },
+      {
+        "key_0": "alta\u2019r",
+        "key_1": "(N.) altar, house shrine."
+      },
+      {
+        "key_0": "alti\u2019",
+        "key_1": "(N.) thunder; (?lightning?); see duldul."
+      },
+      {
+        "key_0": "alulu\u2019d",
+        "key_1": "(N.) 1. eaves and drain of a roof; [metaphorically]"
+      },
+      {
+        "key_0": "aluminyu",
+        "key_1": "(N.) aluminum; cheap money (new coins-as"
+      },
+      {
+        "key_0": "a\u2019lun",
+        "key_1": "(N.) wave."
+      },
+      {
+        "key_0": "a\u2019lus",
+        "key_1": "(Q.) nearly, almost."
+      },
+      {
+        "key_0": "alwa\u2019gi\/",
+        "key_1": "(N.) carpenter."
+      },
+      {
+        "key_0": "aluwa\u2019gi",
+        "key_1": ""
+      },
+      {
+        "key_0": "ama",
+        "key_1": "(D.) pleasing."
+      },
+      {
+        "key_0": "a\u2019mad",
+        "key_1": "(N.) cartilage."
+      },
+      {
+        "key_0": "ama\u2019nu",
+        "key_1": "(N.) word, language, speech."
+      },
+      {
+        "key_0": "amba\u2019g",
+        "key_1": "(N.) contribution. peka-ambag \u2018thing given\u2019."
+      },
+      {
+        "key_0": "ambuq",
+        "key_1": "(N.) nickname for Pablo."
+      },
+      {
+        "key_0": "ambun",
+        "key_1": "(N.) dew."
+      },
+      {
+        "key_0": "ambus",
+        "key_1": "(V.) mamambus \u2018share (food)\u2019."
+      },
+      {
+        "key_0": "-andam-",
+        "key_1": "(V.) borrow; see -dam-. manamdam,"
+      },
+      {
+        "key_0": "amiyam",
+        "key_1": "(N.) winter, the cold season from October to"
+      },
+      {
+        "key_0": "ampi\u2019l",
+        "key_1": "(V.) man-ampil \u2018stack (dishes)\u2019, ampil-an,"
+      },
+      {
+        "key_0": "ampo\u2019\/",
+        "key_1": "(Cocombiner) \u2018and\u2019."
+      },
+      {
+        "key_0": "ampo\u2019n",
+        "key_1": ""
+      },
+      {
+        "key_0": "amu\u2019k",
+        "key_1": "(N.) mosquito."
+      },
+      {
+        "key_0": "amuri\u2019kut",
+        "key_1": "(N.) a kind of grass or weed with pronged seeds."
+      },
+      {
+        "key_0": "ana\u2019k",
+        "key_1": "(N.) child; (pl.) a:nak."
+      },
+      {
+        "key_0": "ana\u2019tis",
+        "key_1": "(N.) atis, a kind of fruit."
+      },
+      {
+        "key_0": "ana\u2019m",
+        "key_1": "(Nu.) six."
+      },
+      {
+        "key_0": "a:na",
+        "key_1": "(N.) a girl\u2019s name, Ana. [a:na \u2018he said\u2019]."
+      },
+      {
+        "key_0": "anda\u2019s",
+        "key_1": "(N.) serrated edges (of cloth). Simon de Andas, a"
+      },
+      {
+        "key_0": "a\u2019ne",
+        "key_1": "(N.) termite."
+      },
+      {
+        "key_0": "a:nidyu",
+        "key_1": "(N.) honeydew melon."
+      },
+      {
+        "key_0": "anima\u2019l",
+        "key_1": "(N.) animal; [also used as a curse]."
+      },
+      {
+        "key_0": "ante\/anta",
+        "key_1": "(Q.) where [with reference to moveable items]."
+      },
+      {
+        "key_0": "anti",
+        "key_1": "(Q.) like, compared to."
+      },
+      {
+        "key_0": "a\u2019ntak",
+        "key_1": "(N.) female sexual organs. antak-ne-da-mu [an"
+      },
+      {
+        "key_0": "anting-",
+        "key_1": "(N.) talisman."
+      },
+      {
+        "key_0": "anti\u2019ng",
+        "key_1": "(V.) mag-antinganting \u2018use talisman\u2019."
+      },
+      {
+        "key_0": "anti-",
+        "key_1": "(N.) anti-ra\u2019bis, anti-te-tanus \u2018injections to prevent"
+      },
+      {
+        "key_0": "anya\u2019q",
+        "key_1": "(Subcombiner) later, and then, so."
+      },
+      {
+        "key_0": "angka\u2019q\/",
+        "key_1": "(N.) nangka, a fruit."
+      },
+      {
+        "key_0": "yangka\u2019q",
+        "key_1": ""
+      },
+      {
+        "key_0": "a\u2019ngga",
+        "key_1": "(Prep.) up to, until."
+      },
+      {
+        "key_0": "anggi\u2019q",
+        "key_1": "(N.) mist, spray, blowing rain."
+      },
+      {
+        "key_0": "a\u2019ngin",
+        "key_1": "(N.) wind."
+      },
+      {
+        "key_0": "-ango",
+        "key_1": "(D.) meyango \u2018derived\u2019."
+      },
+      {
+        "key_0": "anya\u2019ya",
+        "key_1": "(V.) invite."
+      },
+      {
+        "key_0": "-anya\u2019yaq",
+        "key_1": "(V.) mang-anya\u2019yaq \u2018get inflamed (of a wound)\u2019."
+      },
+      {
+        "key_0": "anye\u2019ho",
+        "key_1": "(N.) rum."
+      },
+      {
+        "key_0": "a\u2019pa",
+        "key_1": "(N.) cone, crust (as, an ice-cream cone)."
+      },
+      {
+        "key_0": "apa\u2019",
+        "key_1": "(N.) bran, especially rice bran."
+      },
+      {
+        "key_0": "apa\u2019lit",
+        "key_1": "(N.) narra, a kind of tree. Apalit, a town in"
+      },
+      {
+        "key_0": "apalyaq",
+        "key_1": "(N.) a vegetable, ampalaya."
+      },
+      {
+        "key_0": "apa\u2019n",
+        "key_1": "(N.) bait."
+      },
+      {
+        "key_0": "a\u2019pat",
+        "key_1": "(Nu.) four."
+      },
+      {
+        "key_0": "apendisi\u2019t",
+        "key_1": "is (N.) appendicitis."
+      },
+      {
+        "key_0": "a\u2019piq",
+        "key_1": "(N.) lime (calcium oxide); used in making cement;"
+      },
+      {
+        "key_0": "api\u2019q",
+        "key_1": "(N.) fire, flame, spark."
+      },
+      {
+        "key_0": "apla\u2019ya",
+        "key_1": "(N.) beach [probably a recent borrowing; more"
+      },
+      {
+        "key_0": "apo\u2019n\/apu",
+        "key_1": "\u2019n (N.) Japanese; Japan."
+      },
+      {
+        "key_0": "apqap",
+        "key_1": "(N.) a kind of fish, expensive and considered quite"
+      },
+      {
+        "key_0": "a\u2019pu",
+        "key_1": "(N.) grandparent, especially grandmother. As a"
+      },
+      {
+        "key_0": "apu\u2019",
+        "key_1": "(N.) grandchild."
+      },
+      {
+        "key_0": "apu\u2019luq",
+        "key_1": "(Nu.) ten."
+      },
+      {
+        "key_0": "-a\u2019pun",
+        "key_1": "See na:pun \u2018yesterday\u2019; gatpanapun \u2018afternoon\u2019;"
+      },
+      {
+        "key_0": "a\u2019pus",
+        "key_1": "(N\/V\/St.) imitation, similarity. Apus mu ku kaya."
+      },
+      {
+        "key_0": "a\u2019ral",
+        "key_1": "(V.) mag-aral \u2018study, go to school\u2019. manig-aral"
+      },
+      {
+        "key_0": "ara\u2019p",
+        "key_1": "(N.) arap\/arapa\u2019n \u2018the front\u2019."
+      },
+      {
+        "key_0": "ara\u2019yat",
+        "key_1": "(N.) Mt. Arayat."
+      },
+      {
+        "key_0": "a\u2019re",
+        "key_1": "(N.) hay, usually rice straw."
+      },
+      {
+        "key_0": "argabya\u2019d",
+        "key_1": "u (D.) aggravated."
+      },
+      {
+        "key_0": "a\u2019ri\/ya\u2019ri\/",
+        "key_1": "(D.) finished. mayari \u2018finished\u2019; mayayari."
+      },
+      {
+        "key_0": "ya\u2019riq",
+        "key_1": "(V.) ari-an \u2018finish something\u2019; man-ariq"
+      },
+      {
+        "key_0": "a\u2019ri\/a\u2019riq",
+        "key_1": "(N.) king."
+      },
+      {
+        "key_0": "ari\u2019na",
+        "key_1": "(N.) flour, especially casava flour."
+      },
+      {
+        "key_0": "arino\u2019la",
+        "key_1": "(N.) chamberpot."
+      },
+      {
+        "key_0": "ari:ya\/",
+        "key_1": "(N.) things customarily disapproved; statements of"
+      },
+      {
+        "key_0": "ari\u2019hiya",
+        "key_1": "customary disapproval."
+      },
+      {
+        "key_0": "arkila\u2019",
+        "key_1": "(V.) hire, rent something; see qarkila."
+      },
+      {
+        "key_0": "arni\u2019s",
+        "key_1": "(N.) a self-defense sport."
+      },
+      {
+        "key_0": "arsobi\u2019spo",
+        "key_1": "(N.) archbishop; see obispo."
+      },
+      {
+        "key_0": "aru\u2019",
+        "key_1": "(Excl.) something like \u2018Wow!\u2019."
+      },
+      {
+        "key_0": "a\u2019rung",
+        "key_1": "(N.) nose."
+      },
+      {
+        "key_0": "a\u2019sag",
+        "key_1": "(N.) mantle of a pressure lantern."
+      },
+      {
+        "key_0": "asa\u2019n",
+        "key_1": "(N.) 1. fish. 2. viand, i.e., food eaten with rice."
+      },
+      {
+        "key_0": "a\u2019sang",
+        "key_1": "(N.) gills."
+      },
+      {
+        "key_0": "asa\u2019q-",
+        "key_1": "(V.) asa-an \u2018put hope in someone\u2019."
+      },
+      {
+        "key_0": "asa\u2019wa",
+        "key_1": "(N.) spouse; [metaphor] \u2018one of a pair, like mortar"
+      },
+      {
+        "key_0": "asbu\u2019k",
+        "key_1": "(N.) mouth."
+      },
+      {
+        "key_0": "asik-",
+        "key_1": "(V.) man-asik \u2018farm\u2019. makipan-asik."
+      },
+      {
+        "key_0": "asi\u2019n",
+        "key_1": "(N.) salt; [metaphor] \u2018brains, cleverness\u2019."
+      },
+      {
+        "key_0": "asintado",
+        "key_1": "(D.) clever, accurate."
+      },
+      {
+        "key_0": "a\u2019slag",
+        "key_1": "(N.) light from a heavenly body; see saslag."
+      },
+      {
+        "key_0": "asla\u2019m",
+        "key_1": "(N.) vinegar."
+      },
+      {
+        "key_0": "-aslat",
+        "key_1": "(D.) mayaslat, miyaslat \u2018caught in broken"
+      },
+      {
+        "key_0": "aspak",
+        "key_1": "(N.) crack."
+      },
+      {
+        "key_0": "asta\u2019ka",
+        "key_1": "(N.) stake."
+      },
+      {
+        "key_0": "a\u2019su",
+        "key_1": "(N.) dog."
+      },
+      {
+        "key_0": "asu\u2019k",
+        "key_1": "(N.) smoke."
+      },
+      {
+        "key_0": "asu\u2019l",
+        "key_1": "(N.) blue."
+      },
+      {
+        "key_0": "a\u2019sung",
+        "key_1": "(N.) mortar."
+      },
+      {
+        "key_0": "aswa\u2019ng",
+        "key_1": "(N.) a frightening spirit creature, half-human,"
+      },
+      {
+        "key_0": "aswe\u2019",
+        "key_1": "(N.) 1. comb."
+      },
+      {
+        "key_0": "asyag",
+        "key_1": "(N.) stye; see agya\u2019p."
+      },
+      {
+        "key_0": "asya\u2019s",
+        "key_1": "(N.) post (e.g. asyas-bale \u2018house-post\u2019)."
+      },
+      {
+        "key_0": "at",
+        "key_1": "(Cocombiner) \u2018and\u2019."
+      },
+      {
+        "key_0": "ata\u2019b",
+        "key_1": "(N.) tide."
+      },
+      {
+        "key_0": "ata\u2019d",
+        "key_1": "(V.) escort away from home to another place."
+      },
+      {
+        "key_0": "ata\u2019ke",
+        "key_1": "(N.) attack, heart-attack, stroke."
+      },
+      {
+        "key_0": "atbu\u2019",
+        "key_1": "(N.) sugar-cane."
+      },
+      {
+        "key_0": "atdu\u2019q",
+        "key_1": "(N.) bile."
+      },
+      {
+        "key_0": "a\u2019te",
+        "key_1": "(N.) liver."
+      },
+      {
+        "key_0": "ati\u2019\/ati\u2019n",
+        "key_1": "(Exist.) there is\/there are, be."
+      },
+      {
+        "key_0": "ati\u2019k",
+        "key_1": "(N.) money, wealth; see qatik."
+      },
+      {
+        "key_0": "atlu\u2019",
+        "key_1": "(Nu.) three."
+      },
+      {
+        "key_0": "-atni\u2019",
+        "key_1": "(D.) matni\u2019 \u2018loud\u2019."
+      },
+      {
+        "key_0": "aca\u2019ta",
+        "key_1": "(N.) a large bedpan."
+      },
+      {
+        "key_0": "a\u2019tcan",
+        "key_1": "(N.) stomach."
+      },
+      {
+        "key_0": "atca\u2019q",
+        "key_1": "(V.) throw; itca \u2018threw\u2019."
+      },
+      {
+        "key_0": "atca\u2019ra",
+        "key_1": "(N.) pickled salad."
+      },
+      {
+        "key_0": "atci\u2019ng",
+        "key_1": "(N.) sneeze."
+      },
+      {
+        "key_0": "atcu\u2019",
+        "key_1": "See ati + yu."
+      },
+      {
+        "key_0": "atra\u2019s",
+        "key_1": "(V.) to the back, rear; retrogress. see qatras."
+      },
+      {
+        "key_0": "atra\u2019su",
+        "key_1": "(N.) omission, failure."
+      },
+      {
+        "key_0": "at-saka\u2019\/",
+        "key_1": "(Cocombiner) \u2018and also\u2019."
+      },
+      {
+        "key_0": "atcaka\u2019",
+        "key_1": "at-saka na \u2018later\u2019."
+      },
+      {
+        "key_0": "a\u2019tsi",
+        "key_1": "(N.) older sister."
+      },
+      {
+        "key_0": "a:tul",
+        "key_1": "(N.) decision."
+      },
+      {
+        "key_0": "atu\u2019p\/ata\u2019p",
+        "key_1": "(N.) peak of a roof."
+      },
+      {
+        "key_0": "a\u2019tut",
+        "key_1": "(N.) flatulence."
+      },
+      {
+        "key_0": "atye\u2019sa\/",
+        "key_1": "(N.) a kind of fruit."
+      },
+      {
+        "key_0": "atce\u2019sa",
+        "key_1": ""
+      },
+      {
+        "key_0": "au\u2019l-",
+        "key_1": "(V.) awl-an \u2018guess something\u2019, c.f. ula-"
+      },
+      {
+        "key_0": "aunus",
+        "key_1": "(N.) portion, share."
+      },
+      {
+        "key_0": "a\u2019us",
+        "key_1": "(V.) call, summon."
+      },
+      {
+        "key_0": "a\u2019wak",
+        "key_1": "(N.) a large bird of prey, crow or hawk."
+      },
+      {
+        "key_0": "awa\u2019kan",
+        "key_1": "(N.) waist."
+      },
+      {
+        "key_0": "-a\u2019wad\/-",
+        "key_1": "(V.) ask for; see inyad. manyawad, menyad\/"
+      },
+      {
+        "key_0": "ya\u2019wad",
+        "key_1": "menyawad, inyawad\/inawad, pakiqawad,"
+      },
+      {
+        "key_0": "[tawad?]",
+        "key_1": "pa:yawad, papan-yawad, pa:nyawaran, a:yawad,"
+      },
+      {
+        "key_0": "a\u2019wang",
+        "key_1": "(N.) window."
+      },
+      {
+        "key_0": "a\u2019we",
+        "key_1": "(N.) a kind of rattan."
+      },
+      {
+        "key_0": "awi\u2019g-awi\u2019",
+        "key_1": "g (D.) similar in appearance; see qawigqawig."
+      },
+      {
+        "key_0": "awni\u2019",
+        "key_1": "(Subs.) alternate form for oini."
+      },
+      {
+        "key_0": "awta",
+        "key_1": "(Subs.) alternate for oita."
+      },
+      {
+        "key_0": "a\u2019yri",
+        "key_1": "(N.) air."
+      },
+      {
+        "key_0": "a\u2019yun",
+        "key_1": "(V.) agree with, go along with."
+      },
+      {
+        "key_0": "ayu\u2019n",
+        "key_1": "(N.) earthquake."
+      },
+      {
+        "key_0": "a\u2019yup",
+        "key_1": "(N.) bird. ayup-ayu-pan \u2018insect\u2019."
+      },
+      {
+        "key_0": "a\u2019ywe",
+        "key_1": "(N.) highway."
+      }
+    ]
+  }
+]
