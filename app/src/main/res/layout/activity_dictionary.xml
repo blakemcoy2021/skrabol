@@ -15,7 +15,7 @@
         android:backgroundTint="@color/white"
 
         android:hint="@string/dict_word"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/white"
 
         android:padding="10sp"
 
@@ -58,7 +58,7 @@
         android:backgroundTint="@color/white"
 
         android:hint="@string/dict_details"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/white"
 
         android:padding="10sp"
 
@@ -79,7 +79,7 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictDetailsEdxDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.15"
+        app:layout_constraintGuide_percent="0.19"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictDetailsEdxLeft"
         android:layout_width="wrap_content"
@@ -117,12 +117,12 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictCategorySpnTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.16"
+        app:layout_constraintGuide_percent="0.21"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictCategorySpnDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.22"
+        app:layout_constraintGuide_percent="0.27"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictCategorySpnLeft"
         android:layout_width="wrap_content"
@@ -154,12 +154,12 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictDeleteBtnTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.29"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictDeleteBtnDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.32"
+        app:layout_constraintGuide_percent="0.36"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictDeleteBtnLeft"
         android:layout_width="wrap_content"
@@ -196,12 +196,12 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictSearchBtnTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.29"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictSearchBtnDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.32"
+        app:layout_constraintGuide_percent="0.36"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictSearchBtnLeft"
         android:layout_width="wrap_content"
@@ -238,12 +238,12 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictUpdateBtnTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.29"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictUpdateBtnDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.32"
+        app:layout_constraintGuide_percent="0.36"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictUpdateBtnLeft"
         android:layout_width="wrap_content"
@@ -274,12 +274,12 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictRunBtnTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.29"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictRunBtnDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.32"
+        app:layout_constraintGuide_percent="0.36"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/dictRunBtnLeft"
         android:layout_width="wrap_content"
@@ -309,7 +309,7 @@
     <androidx.constraintlayout.widget.Guideline android:id="@+id/mainMiscellaneousListTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.33"
+        app:layout_constraintGuide_percent="0.38"
         android:orientation="horizontal" />
     <androidx.constraintlayout.widget.Guideline android:id="@+id/mainMiscellaneousListDown"
         android:layout_width="wrap_content"

@@ -46,6 +46,40 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         return count
     }
 
+    fun onGetDataSpecific(name: String): ArrayList<DictionaryModel> {
+        val dictlist : ArrayList<DictionaryModel> = ArrayList()
+        val selectQuery = "SELECT * FROM $TBL_DICT WHERE $col2 LIKE '%$name%' "
+        val db = this.readableDatabase
+
+        val cursor: Cursor?
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e : Exception) {
+            e.printStackTrace()
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+
+        var id : Long
+        var word : String
+        var details : String
+        var category : String
+
+        if (cursor.moveToFirst()) {
+            do {
+                id = cursor.getLong(cursor.getColumnIndex(col1))
+                word = cursor.getString(cursor.getColumnIndex(col2))
+                details = cursor.getString(cursor.getColumnIndex(col3))
+                category = cursor.getString(cursor.getColumnIndex(col4))
+
+                val test = DictionaryModel(id, word, details, category)
+                dictlist.add(test)
+            } while (cursor.moveToNext())
+        }
+
+        return dictlist
+    }
+
     @SuppressLint("Recycle")
     fun onGetAllTestData() : ArrayList<DictionaryModel> {
         val dictlist : ArrayList<DictionaryModel> = ArrayList()
@@ -110,7 +144,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         return success
     }
 
-    fun onDeleteStatement(id: Int) : Int {
+    fun onDeleteStatement(id: Long) : Int {
         val db = this.writableDatabase
 
         val obj = ContentValues()

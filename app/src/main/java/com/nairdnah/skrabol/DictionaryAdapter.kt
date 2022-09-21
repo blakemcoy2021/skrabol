@@ -8,29 +8,35 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nairdnah.skrabol.DictionaryModel
 import com.nairdnah.skrabol.R
 
-class DictionaryAdapter : RecyclerView.Adapter<DictionaryAdapter.TestViewHolder>() {
+class DictionaryAdapter : RecyclerView.Adapter<DictionaryAdapter.DictionaryViewHolder>() {
 
-    private var testlist: ArrayList<DictionaryModel> = ArrayList()
+    private var dictlist: ArrayList<DictionaryModel> = ArrayList()
+    private var onClickItem: ((DictionaryModel) -> Unit)? = null
 
     fun addItems(items: ArrayList<DictionaryModel>) {
-        this.testlist = items
+        this.dictlist = items
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = TestViewHolder(
+    fun setOnClickItem(callback: (DictionaryModel) -> Unit) {
+        this.onClickItem = callback
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = DictionaryViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.list_dictionary_adapter, parent, false)
     )
 
-    override fun onBindViewHolder(holder: TestViewHolder, position: Int) {
-        val test = testlist[position]
+    override fun onBindViewHolder(holder: DictionaryViewHolder, position: Int) {
+        val test = dictlist[position]
         holder.bindView(test)
+        holder.itemView.setOnClickListener { onClickItem?.invoke(test) }
     }
 
     override fun getItemCount(): Int {
-        return testlist.size
+        return dictlist.size
     }
 
-    class TestViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    class DictionaryViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
         private var word = view.findViewById<TextView>(R.id.txtvwDataWord)
         private var details = view.findViewById<TextView>(R.id.txtvwDataDetails)
 
