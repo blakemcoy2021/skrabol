@@ -2,6 +2,7 @@ package com.nairdnah.skrabol
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.widget.TextView
 
 class DialogLoading(val mActivity: Activity) {
     private lateinit var dialog: AlertDialog

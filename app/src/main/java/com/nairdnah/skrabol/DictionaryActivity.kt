@@ -2,12 +2,14 @@ package com.nairdnah.skrabol
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nairdnah.testmodules.DictionaryAdapter
+import kotlinx.coroutines.*
 import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
@@ -45,17 +47,20 @@ class DictionaryActivity : AppCompatActivity() {
         initView()
         initSpinner()
         initRecyclerView()
-        readJson()
 
         val isThereData = sqLiteHelper.onGetDataCount()
         if (isThereData == 0L) {
-            // val loading = DialogLoading(this)
-            // loading.startLoading()
+            var data = ArrayList<DictionaryModel>()
+            val loading = DialogLoading(this)
+            loading.startLoading()
 
-            // coroutines
-
-            // thread(start = true) {}
-            // Thread(Runnable {}).start()
+            GlobalScope.launch(Dispatchers.Default) {
+                data = readJson()
+                loading.isDismiss()
+                withContext(Dispatchers.Main) {
+                    dictAdapter?.addItems(data)
+                }
+            }
 
         }
         getDataAllDictionary()
@@ -84,7 +89,7 @@ class DictionaryActivity : AppCompatActivity() {
             }
         }
         btnRun.setOnClickListener {
-            //readJson()
+            Toast.makeText(this, "Feature N/A", Toast.LENGTH_SHORT).show()
         }
         dictAdapter?.setOnClickItem {
             Toast.makeText(this, it.word, Toast.LENGTH_SHORT).show()
@@ -172,7 +177,11 @@ class DictionaryActivity : AppCompatActivity() {
 
 
 
-    private fun readJson() {
+    private fun readJson(): ArrayList<DictionaryModel> {
+        /** temp below block */
+        // var printstr = ""
+        var dictList = arrayListOf<DictionaryModel>()
+
         val jsonRaw: String?
 
         try {
@@ -184,10 +193,6 @@ class DictionaryActivity : AppCompatActivity() {
 
             val jsonObj = jsonPreArr.getJSONObject(0)
             val jsonArr = jsonObj.getJSONArray("table_data")
-
-                /** temp below block */
-                // var printstr = ""
-                var dictList = arrayListOf<DictionaryModel>()
 
             var isError = false
             var ctr = 0
@@ -212,15 +217,17 @@ class DictionaryActivity : AppCompatActivity() {
                     /** temp below block */
                     // printstr += "$jsonWord "
             }
-            if (isError) return
+            if (isError) {
+                dictList = arrayListOf<DictionaryModel>()
+                return dictList
+            }
 
 
                 /** temp below block */
                 println("@#@#@#@#@#@#@#@# $ctr")
                 // println(dictList)
                 // Toast.makeText(this, printstr, Toast.LENGTH_SHORT).show()
-
-            dictAdapter?.addItems(dictList)
+                // dictAdapter?.addItems(dictList)
 
         } catch (iox: IOException) {
             Toast.makeText(this, "Input/Output Problem", Toast.LENGTH_SHORT).show()
@@ -229,6 +236,8 @@ class DictionaryActivity : AppCompatActivity() {
             Toast.makeText(this, "JSON Parse Problem", Toast.LENGTH_SHORT).show()
             jsonx.printStackTrace()
         }
+
+        return dictList
     }
 
     private fun clearTextFields() {

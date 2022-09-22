@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, DictionaryActivity::class.java)
             startActivity(intent)
         }
+        btnGame.setOnClickListener {
+            val intent = Intent(this@MainActivity, GameWordActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun initView() {
