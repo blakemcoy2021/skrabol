@@ -32,7 +32,7 @@ class DictionaryActivity : AppCompatActivity() {
     private lateinit var rcvwDict: RecyclerView
     private var dictAdapter: DictionaryAdapter? = null
 
-    val categories = arrayOf("-Select Category-", "Food", "Action", "Kitchen", "House", "Outside")
+    val categories = arrayOf("-Select Category-", "Food", "Action", "Kitchen", "House", "Outside") //, "In Love With")
 
     private var dict: DictionaryModel? = null
     private var isLoading: Int = 0
@@ -69,7 +69,7 @@ class DictionaryActivity : AppCompatActivity() {
 
         btnSearch.setOnClickListener {
             val word = edxWord.text.toString()
-            if (word.isEmpty() || word == "") {
+            if (word.trim().isEmpty() || word == "") {
                 getDataAllDictionary()
                 Toast.makeText(this, "Input Word Required.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -122,7 +122,7 @@ class DictionaryActivity : AppCompatActivity() {
     }
 
     private fun getDataSpecific(word: String) {
-        val dictlist = sqLiteHelper.onGetDataSpecific(word)
+        val dictlist = sqLiteHelper.onGetDataSpecific(word, false)
         dictAdapter?.addItems(dictlist)
     }
 
@@ -178,12 +178,12 @@ class DictionaryActivity : AppCompatActivity() {
 
 
     private fun readJson(): ArrayList<DictionaryModel> {
-        /** temp below block */
+            /** temp below block */
         // var printstr = ""
+
         var dictList = arrayListOf<DictionaryModel>()
 
         val jsonRaw: String?
-
         try {
             val istream : InputStream = assets.open("sampledict.json")
             jsonRaw = istream.bufferedReader().use {
@@ -198,11 +198,22 @@ class DictionaryActivity : AppCompatActivity() {
             var ctr = 0
             for (i in 0 until jsonArr.length() - 1) {
                 val jsonData = jsonArr.getJSONObject(i)
-                val jsonWord = jsonData.getString("key_0")
                 val jsonDetails = jsonData.getString("key_1")
 
+                val jsonPronounce : String = jsonData.getString("key_0")
+                var jsonWord = jsonPronounce
+
+                    /** code block to clear special characters of the word */
+                val specialCharArr = arrayListOf('’', '-', '/', '[', ']', ':', '?')
+                for (i in specialCharArr) {
+                    if (jsonWord.contains(i)) {
+                        jsonWord = jsonWord.replace("$i", "")
+                    }
+                }
+
                 val currId = sqLiteHelper.onGetDataCount() + 1
-                    val dictmodel = DictionaryModel(id = currId, word = jsonWord, details = jsonDetails, category = "n/a")
+                val dictmodel = DictionaryModel(
+                        id = currId, word = jsonWord, pronounce = jsonPronounce, details = jsonDetails, category = "n/a")
 
                 val status = sqLiteHelper.onInsertStatement(dictmodel)
                 if (status > -1) {
@@ -214,17 +225,18 @@ class DictionaryActivity : AppCompatActivity() {
                 }
                 dictList.add(dictmodel)
 
-                    /** temp below block */
-                    // printstr += "$jsonWord "
+                        /** temp below block */
+                    // val isInclude : Boolean = jsonWord.toString().contains('’')
+                    // printstr += "$jsonWord "  // [$isInclude] "
             }
             if (isError) {
                 dictList = arrayListOf<DictionaryModel>()
                 return dictList
             }
 
-
-                /** temp below block */
-                println("@#@#@#@#@#@#@#@# $ctr")
+                    /** temp below block */
+                // println("@#@#@#@#@#@#@#@# $printstr")
+                // println("@#@#@#@#@#@#@#@# $ctr")
                 // println(dictList)
                 // Toast.makeText(this, printstr, Toast.LENGTH_SHORT).show()
                 // dictAdapter?.addItems(dictList)

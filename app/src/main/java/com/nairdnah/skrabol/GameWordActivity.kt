@@ -3,11 +3,10 @@ package com.nairdnah.skrabol
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.google.android.flexbox.FlexboxLayout
+import java.util.*
+import kotlin.collections.ArrayList
 
 class GameWordActivity : AppCompatActivity() {
 
@@ -40,28 +39,93 @@ class GameWordActivity : AppCompatActivity() {
     private lateinit var btnGameClear : Button
     private lateinit var btnGameReRoll : Button
 
-    val DEFAULT_WORD : String = "- - - - - - -"
+    private lateinit var btnGameRun : ImageView
+    private lateinit var edxGameWord : EditText
+    private lateinit var txtvwGameStatus : TextView
+    private lateinit var txtvwGamePoints : TextView
+
+    val DEFAULT_WORD : Int = R.string.game_word
+    val DEFAULT_STATUS : Int = R.string.game_status
+    val DEFAULT_POINTS : Int = R.string.game_points
+
+    private lateinit var sqLiteHelper: SQLiteHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_word)
 
+        sqLiteHelper = SQLiteHelper(this)
+
         initView()
-        txtvwGameWord.text = DEFAULT_WORD
+        txtvwGameWord.text = getString(DEFAULT_WORD)
+        txtvwGameStatus.text = getString(DEFAULT_STATUS)
+        txtvwGamePoints.text = getString(DEFAULT_POINTS)
         generateButtonTiles()
 
         btnGameClear.setOnClickListener {
-            txtvwGameWord.setText(DEFAULT_WORD)
+            txtvwGameWord.setText(getString(DEFAULT_WORD))
+            txtvwGameStatus.setText(getString(DEFAULT_STATUS))
+            txtvwGamePoints.setText(getString(DEFAULT_POINTS))
         }
         btnGameReRoll.setOnClickListener {
             layoutLetterPool.removeAllViews()
             generateButtonTiles()
         }
+        btnGameRun.setOnClickListener {
+            val inputword = edxGameWord.text.toString()
+            var currword = txtvwGameWord.text.toString()
+            if (inputword.trim().isEmpty() && currword == getString(DEFAULT_WORD)) {
+                Toast.makeText(this, "Enter a word to post.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else if (inputword.trim().isNotEmpty() || inputword != "") {
+                txtvwGameWord.text = inputword
+                checkWordExist(inputword)
+            }
+            else if (currword != getString(DEFAULT_WORD)) {
+                currword = currword[0].toUpperCase() + currword.substring(1).toLowerCase(Locale.getDefault())
+                checkWordExist(currword)
+            }
+
+        }
+    }
+
+    fun checkWordExist(word: String) {
+        val dictlist = sqLiteHelper.onGetDataSpecific(word, true)
+        if (dictlist.size != 0) {
+            Toast.makeText(this, "Word is Existing in the Records", Toast.LENGTH_SHORT).show()
+            txtvwGameStatus.text = dictlist[0].details
+
+//            if (word == "Jamvee") {
+//                txtvwGamePoints.text = "100"
+//            }
+//            else if (word == "Jamvee Joyce") {
+//                txtvwGamePoints.text = "101%"
+//            }
+//            else if (word == "Mhel Handrian") {
+//                txtvwGamePoints.text = "-101"
+//            }
+//            else if (word == "GG") {
+//                txtvwGamePoints.text = "-100 sa langit"
+//            }
+        }
+        else {
+            Toast.makeText(this, "Your word not found!", Toast.LENGTH_SHORT).show()
+            txtvwGameStatus.text = getString(DEFAULT_STATUS)
+            txtvwGamePoints.text = getString(DEFAULT_POINTS)
+        }
+
     }
 
     fun generateButtonTiles() {
+
+//        val tempLetterPool : ArrayList<Char> = arrayListOf('X','J','A','G','M','E','V','E','J','Y','C','O')
+//        for (i in 0 until tempLetterPool.size) {
+//            val letter = tempLetterPool[i]
+
         for (i in 0..11) {
             val letter = ('A'..'Z').random()
+
             val tilebtn = Button(this)
 
             tilebtn.apply {
@@ -73,11 +137,12 @@ class GameWordActivity : AppCompatActivity() {
             tilebtn.setOnClickListener(View.OnClickListener {
                 val key = tilebtn.text.toString()
                 var currWord = txtvwGameWord.text.toString()
-                if (currWord == DEFAULT_WORD) {
+                if (currWord == getString(DEFAULT_WORD)) {
                     currWord = ""
                 }
                 currWord += key
                 txtvwGameWord.setText(currWord)
+                layoutLetterPool.removeView(tilebtn)
             })
 
             layoutLetterPool.addView(tilebtn)
@@ -89,5 +154,9 @@ class GameWordActivity : AppCompatActivity() {
         txtvwGameWord = findViewById(R.id.txtvwGameWord)
         btnGameClear = findViewById(R.id.btn_gameclear)
         btnGameReRoll = findViewById(R.id.btn_gamereroll)
+        btnGameRun = findViewById(R.id.btn_gamerun)
+        edxGameWord = findViewById(R.id.edx_gameword)
+        txtvwGameStatus = findViewById(R.id.txtvwGameStatus)
+        txtvwGamePoints = findViewById(R.id.txtvwGamePoints)
     }
 }

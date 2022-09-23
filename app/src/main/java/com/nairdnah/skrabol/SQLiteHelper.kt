@@ -16,12 +16,13 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         private const val TBL_DICT = "tbl_dict"
         private const val col1 = "id"
         private const val col2 = "word"
-        private const val col3 = "details"
-        private const val col4 = "category"
+        private const val col3 = "pronounce"
+        private const val col4 = "details"
+        private const val col5 = "category"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTblTestDb = ("CREATE TABLE $TBL_DICT ($col1 LONG PRIMARY KEY, $col2 TEXT, $col3 TEXT, $col4 TEXT) ")
+        val createTblTestDb = ("CREATE TABLE $TBL_DICT ($col1 LONG PRIMARY KEY, $col2 TEXT, $col3 TEXT, $col4 TEXT, $col5 TEXT) ")
         db?.execSQL(createTblTestDb)
     }
 
@@ -46,9 +47,16 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         return count
     }
 
-    fun onGetDataSpecific(name: String): ArrayList<DictionaryModel> {
+    fun onGetDataSpecific(name: String, explicit: Boolean): ArrayList<DictionaryModel> {
         val dictlist : ArrayList<DictionaryModel> = ArrayList()
-        val selectQuery = "SELECT * FROM $TBL_DICT WHERE $col2 LIKE '%$name%' "
+        var selectQuery = "SELECT * FROM $TBL_DICT WHERE "
+        if (explicit) {
+            selectQuery += "$col2='$name' "
+        }
+        else {
+            selectQuery += "$col2 LIKE '%$name%' "
+        }
+
         val db = this.readableDatabase
 
         val cursor: Cursor?
@@ -62,6 +70,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
         var id : Long
         var word : String
+        var pronounce : String
         var details : String
         var category : String
 
@@ -69,10 +78,11 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             do {
                 id = cursor.getLong(cursor.getColumnIndex(col1))
                 word = cursor.getString(cursor.getColumnIndex(col2))
-                details = cursor.getString(cursor.getColumnIndex(col3))
-                category = cursor.getString(cursor.getColumnIndex(col4))
+                pronounce = cursor.getString(cursor.getColumnIndex(col3))
+                details = cursor.getString(cursor.getColumnIndex(col4))
+                category = cursor.getString(cursor.getColumnIndex(col5))
 
-                val test = DictionaryModel(id, word, details, category)
+                val test = DictionaryModel(id, word, pronounce, details, category)
                 dictlist.add(test)
             } while (cursor.moveToNext())
         }
@@ -97,6 +107,7 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
 
         var id : Long
         var word : String
+        var pronounce : String
         var details : String
         var category : String
 
@@ -104,10 +115,11 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
             do {
                 id = cursor.getLong(cursor.getColumnIndex(col1))
                 word = cursor.getString(cursor.getColumnIndex(col2))
-                details = cursor.getString(cursor.getColumnIndex(col3))
-                category = cursor.getString(cursor.getColumnIndex(col4))
+                pronounce = cursor.getString(cursor.getColumnIndex(col3))
+                details = cursor.getString(cursor.getColumnIndex(col4))
+                category = cursor.getString(cursor.getColumnIndex(col5))
 
-                val test = DictionaryModel(id, word, details, category)
+                val test = DictionaryModel(id, word, pronounce, details, category)
                 dictlist.add(test)
             } while (cursor.moveToNext())
         }
@@ -122,8 +134,9 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         val obj = ContentValues()
         obj.put(col1, dict.id)
         obj.put(col2, dict.word)
-        obj.put(col3, dict.details)
-        obj.put(col4, dict.category)
+        obj.put(col3, dict.pronounce)
+        obj.put(col4, dict.details)
+        obj.put(col5, dict.category)
 
         val success = db.insert(TBL_DICT, null, obj)
         db.close()
@@ -136,8 +149,9 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         val obj = ContentValues()
         obj.put(col1, test.id)
         obj.put(col2, test.word)
-        obj.put(col3, test.details)
-        obj.put(col4, test.category)
+        obj.put(col3, test.pronounce)
+        obj.put(col4, test.details)
+        obj.put(col5, test.category)
 
         val success = db.update(TBL_DICT, obj, "id=" + test.id, null)
         db.close()

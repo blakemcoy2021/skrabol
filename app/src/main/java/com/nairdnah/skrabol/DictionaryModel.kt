@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 data class DictionaryModel(
     var id: Long = 0,
     var word: String = "",
+    var pronounce: String = "",
     var details: String = "",
     var category: String = "n/a"
 ) {

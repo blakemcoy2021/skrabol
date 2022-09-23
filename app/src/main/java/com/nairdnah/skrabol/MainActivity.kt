@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +25,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, GameWordActivity::class.java)
             startActivity(intent)
         }
-
+        btnBoard.setOnClickListener {
+            val msg = "Board is still in-progress" // ""Hi Ms. Attorney Jamvee :)"
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun initView() {

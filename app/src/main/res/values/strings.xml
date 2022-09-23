@@ -9,4 +9,11 @@
     <string name="dict_run">Populate</string>
     <string name="dict_word">Word Here</string>
     <string name="dict_details">Details Here</string>
+    <string name="game_tag">game_content_desc</string>
+    <string name="game_points">0</string>
+    <string name="game_word">- - - - - - -</string>
+    <string name="game_status">No Word Played Yet</string>
+    <string name="game_reroll">Re-roll</string>
+    <string name="game_clear">Clear</string>
+    <string name="game_search">Word Search Here</string>
 </resources>
