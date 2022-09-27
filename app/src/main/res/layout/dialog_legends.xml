@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10sp"
+    android:padding="10sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/game_legends"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_margin="5sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles1"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points2"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles2"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points3"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles3"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points4"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles4"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points5"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles5"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/game_points8"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles8"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/game_points10"
+            android:textSize="16sp"
+            android:layout_weight="0.4"/>
+
+        <Spinner android:id="@+id/spn_tiles10"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal|center_vertical"
+            android:textColor="@color/purple_700"/>
+
+    </LinearLayout>
+
+</LinearLayout>

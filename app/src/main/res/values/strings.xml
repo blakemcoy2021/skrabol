@@ -16,4 +16,12 @@
     <string name="game_reroll">Re-roll</string>
     <string name="game_clear">Clear</string>
     <string name="game_search">Word Search Here</string>
+    <string name="game_legends">Points According to Tiles</string>
+    <string name="game_points1">One (1) Point:</string>
+    <string name="game_points2">Two (2) Points:</string>
+    <string name="game_points3">Three (3) Points:</string>
+    <string name="game_points4">Four (4) Points:</string>
+    <string name="game_points5">Five (5) Points:</string>
+    <string name="game_points8">Eight (8) Points:</string>
+    <string name="game_points10">Ten (10) Points:</string>
 </resources>

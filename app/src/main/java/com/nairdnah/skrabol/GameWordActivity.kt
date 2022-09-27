@@ -10,26 +10,26 @@ import kotlin.collections.ArrayList
 
 class GameWordActivity : AppCompatActivity() {
 
-    val letter_pt1 = arrayOf("A", "E", "I", "L", "N", "O", "R", "S", "T", "U")
-    val letter_ctr1 = arrayOf("9", "12", "9", "4", "6", "8", "6", "4", "6", "4")
+    val letter_pt1 = arrayOf('A', 'E', 'I', 'L', 'N', 'O', 'R', 'S', 'T', 'U')
+    val letter_ctr1 = arrayOf(9, 12, 9, 4, 6, 8, 6, 4, 6, 4)
 
-    val letter_pt2 = arrayOf("D", "G")
-    val letter_ctr2 = arrayOf("4", "3")
+    val letter_pt2 = arrayOf('D', 'G')
+    val letter_ctr2 = arrayOf(4, 3)
 
-    val letter_pt3 = arrayOf("B", "C", "M", "P")
-    val letter_ctr3 = arrayOf("2", "2", "2", "2")
+    val letter_pt3 = arrayOf('B', 'C', 'M', 'P')
+    val letter_ctr3 = arrayOf(2, 2, 2, 2)
 
-    val letter_pt4 = arrayOf("F", "H", "V", "W", "Y")
-    val letter_ctr4 = arrayOf("2", "2", "2", "2", "2")
+    val letter_pt4 = arrayOf('F', 'H', 'V', 'W', 'Y')
+    val letter_ctr4 = arrayOf(2, 2, 2, 2, 2)
 
-    val letter_pt5 = arrayOf("K")
-    val letter_ctr5 = arrayOf("1")
+    val letter_pt5 = arrayOf('K')
+    val letter_ctr5 = arrayOf(1)
 
-    val letter_pt8 = arrayOf("J", "X")
-    val letter_ctr8 = arrayOf("1", "1")
+    val letter_pt8 = arrayOf('J', 'X')
+    val letter_ctr8 = arrayOf(1, 1)
 
-    val letter_pt10 = arrayOf("Q", "Z")
-    val letter_ctr10 = arrayOf("1", "1")
+    val letter_pt10 = arrayOf('Q', 'Z')
+    val letter_ctr10 = arrayOf(1, 1)
 
 
     private lateinit var layoutLetterPool : FlexboxLayout
@@ -43,6 +43,8 @@ class GameWordActivity : AppCompatActivity() {
     private lateinit var edxGameWord : EditText
     private lateinit var txtvwGameStatus : TextView
     private lateinit var txtvwGamePoints : TextView
+
+    private lateinit var btnLegends : ImageView
 
     val DEFAULT_WORD : Int = R.string.game_word
     val DEFAULT_STATUS : Int = R.string.game_status
@@ -63,9 +65,9 @@ class GameWordActivity : AppCompatActivity() {
         generateButtonTiles()
 
         btnGameClear.setOnClickListener {
-            txtvwGameWord.setText(getString(DEFAULT_WORD))
-            txtvwGameStatus.setText(getString(DEFAULT_STATUS))
-            txtvwGamePoints.setText(getString(DEFAULT_POINTS))
+            txtvwGameWord.text = getString(DEFAULT_WORD)
+            txtvwGameStatus.text = getString(DEFAULT_STATUS)
+            txtvwGamePoints.text = getString(DEFAULT_POINTS)
         }
         btnGameReRoll.setOnClickListener {
             layoutLetterPool.removeAllViews()
@@ -73,7 +75,8 @@ class GameWordActivity : AppCompatActivity() {
         }
         btnGameRun.setOnClickListener {
             val inputword = edxGameWord.text.toString()
-            var currword = txtvwGameWord.text.toString()
+            val currword = txtvwGameWord.text.toString()
+
             if (inputword.trim().isEmpty() && currword == getString(DEFAULT_WORD)) {
                 Toast.makeText(this, "Enter a word to post.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -83,30 +86,35 @@ class GameWordActivity : AppCompatActivity() {
                 checkWordExist(inputword)
             }
             else if (currword != getString(DEFAULT_WORD)) {
-                currword = currword[0].toUpperCase() + currword.substring(1).toLowerCase(Locale.getDefault())
                 checkWordExist(currword)
             }
 
         }
+        btnLegends.setOnClickListener {
+            DialogLegends().show(supportFragmentManager, "dialog_legends")
+        }
     }
 
-    fun checkWordExist(word: String) {
+    private fun checkWordExist(word: String) {
         val dictlist = sqLiteHelper.onGetDataSpecific(word, true)
         if (dictlist.size != 0) {
             Toast.makeText(this, "Word is Existing in the Records", Toast.LENGTH_SHORT).show()
             txtvwGameStatus.text = dictlist[0].details
 
-//            if (word == "Jamvee") {
+            val point_indicator : String = wordPointer(word).toString() + " points"
+            txtvwGamePoints.text = point_indicator
+
+//            if (word == "jmv") {
 //                txtvwGamePoints.text = "100"
 //            }
-//            else if (word == "Jamvee Joyce") {
+//            else if (word == "Jmv") {
 //                txtvwGamePoints.text = "101%"
 //            }
-//            else if (word == "Mhel Handrian") {
+//            else if (word == "mhan") {
 //                txtvwGamePoints.text = "-101"
 //            }
 //            else if (word == "GG") {
-//                txtvwGamePoints.text = "-100 sa langit"
+//                txtvwGamePoints.text = "-100"
 //            }
         }
         else {
@@ -117,14 +125,74 @@ class GameWordActivity : AppCompatActivity() {
 
     }
 
-    fun generateButtonTiles() {
+    private fun wordPointer(word: String): Int {
+        val tilematrix = arrayOf(letter_pt1, letter_pt2, letter_pt3, letter_pt4, letter_pt5, letter_pt8, letter_pt10)
+        val pointmatrix = arrayOf(1,2,3,4,5,8,10)
+        var points = 0
+        for (i in word.indices) {
+
+            for (j in tilematrix.indices) {
+                var isBreakAtMatrix = false
+
+                for (k in tilematrix[j].indices) {
+                    val letterOfWord = word[i].toString().toLowerCase()
+                    val fromMatrix = tilematrix[j][k].toString().toLowerCase()
+
+                    //println("@!@!@!@!@!@ $letterOfWord - $fromMatrix")
+
+                    if (letterOfWord == fromMatrix) {
+                        isBreakAtMatrix = true
+                        points += pointmatrix[j]
+                        break;
+                    }
+                }
+                if (isBreakAtMatrix) {
+                    break
+                }
+            }
+
+        }
+        // println("@!@!@!@!@!@ POINTS!!! $points")
+
+        return points
+    }
+
+    private fun generateButtonTiles() {
 
 //        val tempLetterPool : ArrayList<Char> = arrayListOf('X','J','A','G','M','E','V','E','J','Y','C','O')
 //        for (i in 0 until tempLetterPool.size) {
 //            val letter = tempLetterPool[i]
 
-        for (i in 0..11) {
-            val letter = ('A'..'Z').random()
+        for (i in 0..6) { // 11
+            // val letter = ('A'..'Z').random()
+
+            val letter = letter_pt1.random()
+            val tilebtn = Button(this)
+
+            tilebtn.apply {
+                setAllCaps(false)
+                layoutParams = LinearLayout.LayoutParams(200, 200)
+                text = letter.toString()
+                textSize = 20f
+            }
+            tilebtn.setOnClickListener(View.OnClickListener {
+                val key = tilebtn.text.toString()
+                var currWord = txtvwGameWord.text.toString()
+                if (currWord == getString(DEFAULT_WORD)) {
+                    currWord = ""
+                }
+                currWord += key
+                txtvwGameWord.text = currWord
+                layoutLetterPool.removeView(tilebtn)
+            })
+
+            layoutLetterPool.addView(tilebtn)
+        }
+
+        val highPointTiles = arrayOf(letter_pt2, letter_pt3, letter_pt4, letter_pt5, letter_pt8, letter_pt10)
+        for (i in 0..4) { // 11
+            val batchLetters = highPointTiles.random()
+            val letter = batchLetters.random()
 
             val tilebtn = Button(this)
 
@@ -141,15 +209,17 @@ class GameWordActivity : AppCompatActivity() {
                     currWord = ""
                 }
                 currWord += key
-                txtvwGameWord.setText(currWord)
+                txtvwGameWord.text = currWord
                 layoutLetterPool.removeView(tilebtn)
             })
 
             layoutLetterPool.addView(tilebtn)
         }
+
+
     }
 
-    fun initView() {
+    private fun initView() {
         layoutLetterPool = findViewById(R.id.layout_letterpool)
         txtvwGameWord = findViewById(R.id.txtvwGameWord)
         btnGameClear = findViewById(R.id.btn_gameclear)
@@ -158,5 +228,7 @@ class GameWordActivity : AppCompatActivity() {
         edxGameWord = findViewById(R.id.edx_gameword)
         txtvwGameStatus = findViewById(R.id.txtvwGameStatus)
         txtvwGamePoints = findViewById(R.id.txtvwGamePoints)
+
+        btnLegends = findViewById(R.id.btn_legends)
     }
 }

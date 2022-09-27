@@ -51,10 +51,10 @@ class SQLiteHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, 
         val dictlist : ArrayList<DictionaryModel> = ArrayList()
         var selectQuery = "SELECT * FROM $TBL_DICT WHERE "
         if (explicit) {
-            selectQuery += "$col2='$name' "
+            selectQuery += "lower($col2)=lower('$name') "
         }
         else {
-            selectQuery += "$col2 LIKE '%$name%' "
+            selectQuery += "lower($col2) LIKE lower('%$name%') "
         }
 
         val db = this.readableDatabase

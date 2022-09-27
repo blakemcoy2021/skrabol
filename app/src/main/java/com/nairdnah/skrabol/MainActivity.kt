@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnBoard.setOnClickListener {
-            val msg = "Board is still in-progress" // ""Hi Ms. Attorney Jamvee :)"
-            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+            // val msg = "Board is still in-progress" // ""Hi Ms. Attorney Jamvee :)"
+            // Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+            val intent = Intent(this@MainActivity, GameBoardActivity::class.java)
+            startActivity(intent)
         }
     }
 

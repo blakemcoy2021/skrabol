@@ -32,7 +32,7 @@ class DictionaryActivity : AppCompatActivity() {
     private lateinit var rcvwDict: RecyclerView
     private var dictAdapter: DictionaryAdapter? = null
 
-    val categories = arrayOf("-Select Category-", "Food", "Action", "Kitchen", "House", "Outside") //, "In Love With")
+    val categories = arrayOf("-Select Category-", "Food", "Action", "Kitchen", "House", "Outside") //, "Love")
 
     private var dict: DictionaryModel? = null
     private var isLoading: Int = 0
@@ -191,47 +191,52 @@ class DictionaryActivity : AppCompatActivity() {
             }
             val jsonPreArr = JSONArray(jsonRaw)
 
-            val jsonObj = jsonPreArr.getJSONObject(0)
-            val jsonArr = jsonObj.getJSONArray("table_data")
+            for (x in 0 until jsonPreArr.length()) {
 
-            var isError = false
-            var ctr = 0
-            for (i in 0 until jsonArr.length() - 1) {
-                val jsonData = jsonArr.getJSONObject(i)
-                val jsonDetails = jsonData.getString("key_1")
 
-                val jsonPronounce : String = jsonData.getString("key_0")
-                var jsonWord = jsonPronounce
+                val jsonObj = jsonPreArr.getJSONObject(x) // 0
+                val jsonArr = jsonObj.getJSONArray("table_data")
+
+                var isError = false
+                var ctr = 0
+                for (i in 0 until jsonArr.length() - 1) {
+                    val jsonData = jsonArr.getJSONObject(i)
+                    val jsonDetails = jsonData.getString("key_1")
+
+                    val jsonPronounce : String = jsonData.getString("key_0")
+                    var jsonWord = jsonPronounce
 
                     /** code block to clear special characters of the word */
-                val specialCharArr = arrayListOf('’', '-', '/', '[', ']', ':', '?')
-                for (i in specialCharArr) {
-                    if (jsonWord.contains(i)) {
-                        jsonWord = jsonWord.replace("$i", "")
+                    val specialCharArr = arrayListOf('’', '-', '/', '[', ']', ':', '?')
+                    for (i in specialCharArr) {
+                        if (jsonWord.contains(i)) {
+                            jsonWord = jsonWord.replace("$i", "")
+                        }
                     }
-                }
 
-                val currId = sqLiteHelper.onGetDataCount() + 1
-                val dictmodel = DictionaryModel(
-                        id = currId, word = jsonWord, pronounce = jsonPronounce, details = jsonDetails, category = "n/a")
+                    val currId = sqLiteHelper.onGetDataCount() + 1
+                    val dictmodel = DictionaryModel(
+                            id = currId, word = jsonWord, pronounce = jsonPronounce, details = jsonDetails, category = "n/a")
 
-                val status = sqLiteHelper.onInsertStatement(dictmodel)
-                if (status > -1) {
-                    ctr++
-                }
-                else {
-                    isError = true
-                    break
-                }
-                dictList.add(dictmodel)
+                    val status = sqLiteHelper.onInsertStatement(dictmodel)
+                    if (status > -1) {
+                        ctr++
+                    }
+                    else {
+                        isError = true
+                        break
+                    }
+                    dictList.add(dictmodel)
 
-                        /** temp below block */
+                    /** temp below block */
                     // val isInclude : Boolean = jsonWord.toString().contains('’')
                     // printstr += "$jsonWord "  // [$isInclude] "
-            }
-            if (isError) {
-                dictList = arrayListOf<DictionaryModel>()
-                return dictList
+                }
+                if (isError) {
+                    dictList = arrayListOf<DictionaryModel>()
+                    return dictList
+                }
+
             }
 
                     /** temp below block */
