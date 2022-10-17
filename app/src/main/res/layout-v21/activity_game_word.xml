@@ -8,6 +8,44 @@
     tools:context=".GameWordActivity">
 
 
+
+    <ImageView android:id="@+id/img_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_wordgame"
+        android:scaleType="fitXY"
+
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderImgBgTop"
+        app:layout_constraintBottom_toTopOf="@+id/mainHeaderImgBgDown"
+        app:layout_constraintLeft_toRightOf="@id/mainHeaderImgBgLeft"
+        app:layout_constraintRight_toLeftOf="@id/mainHeaderImgBgRight"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="1"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="-0.3"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="1"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+
+
+
+
+
     <ImageView android:id="@+id/btn_legends"
         android:layout_width="0dp"
         android:layout_height="0dp"

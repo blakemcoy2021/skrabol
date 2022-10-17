@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.*
 import com.google.android.flexbox.FlexboxLayout
 import java.util.*
-import kotlin.collections.ArrayList
 
 class GameWordActivity : AppCompatActivity() {
 

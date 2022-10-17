@@ -7,6 +7,130 @@
     android:layout_height="match_parent"
     tools:context=".GameWordActivity">
 
+    <ImageView android:id="@+id/img_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_boardgame"
+        android:scaleType="fitXY"
+
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderImgBgTop"
+        app:layout_constraintBottom_toTopOf="@+id/mainHeaderImgBgDown"
+        app:layout_constraintLeft_toRightOf="@id/mainHeaderImgBgLeft"
+        app:layout_constraintRight_toLeftOf="@id/mainHeaderImgBgRight"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="1"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="-0.3"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/mainHeaderImgBgRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="1"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+
+
+
+    <TextView android:id="@+id/txt_turn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:text="@string/board_turnlbl"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/boardTurnTxtTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardTurnTxtDown"
+        app:layout_constraintLeft_toRightOf="@id/boardTurnTxtLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardTurnTxtRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardTurnTxtTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.01"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardTurnTxtDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.06"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardTurnTxtLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.02"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardTurnTxtRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.4"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+    <TextView android:id="@+id/txt_player1pts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:text="@string/board_points1"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/boardPlayer1PtsTxtTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardPlayer1PtsTurnTxtDown"
+        app:layout_constraintLeft_toRightOf="@id/boardPlayer1PtsTxtLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardPlayer1PtsTxtRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayer1PtsTxtTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.065"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayer1PtsTurnTxtDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.11"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayer1PtsTxtLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.02"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayer1PtsTxtRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.6"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+
+
+
+
+
     <HorizontalScrollView
         android:id="@+id/scroll_board"
         android:layout_width="0dp"
@@ -56,6 +180,327 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.98"
         android:orientation="vertical" />
+
+    <TextView android:id="@+id/txt_pass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:textAlignment="center"
+        android:text="@string/board_pass"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardTxtPassTop"
+        app:layout_constraintBottom_toTopOf="@+id/gameBoardTxtPassDown"
+        app:layout_constraintLeft_toRightOf="@id/gameBoardTxtPassLeft"
+        app:layout_constraintRight_toLeftOf="@id/gameBoardTxtPassRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtPassTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.85"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtPassDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.89"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtPassLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.02"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtPassRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.2"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+    <TextView android:id="@+id/txt_draw"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:textAlignment="center"
+        android:text="@string/board_draw"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardTxtDrawTop"
+        app:layout_constraintBottom_toTopOf="@+id/gameBoardTxtDrawDown"
+        app:layout_constraintLeft_toRightOf="@id/gameBoardTxtDrawLeft"
+        app:layout_constraintRight_toLeftOf="@id/gameBoardTxtDrawRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtDrawTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.9"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtDrawDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.94"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtDrawLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.02"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtDrawRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.2"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+    <TextView android:id="@+id/txt_swap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:textAlignment="center"
+        android:text="@string/board_swap"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardTxtSwapTop"
+        app:layout_constraintBottom_toTopOf="@+id/gameBoardTxtSwapDown"
+        app:layout_constraintLeft_toRightOf="@id/gameBoardTxtSwapLeft"
+        app:layout_constraintRight_toLeftOf="@id/gameBoardTxtSwapRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtSwapTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.95"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtSwapDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.99"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtSwapLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.02"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtSwapRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.2"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+    <TextView android:id="@+id/txt_status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+
+        android:textAlignment="center"
+        android:text="@string/board_status"
+        android:textColor="@color/white"
+
+        android:padding="1sp"
+
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
+
+        app:layout_constraintTop_toBottomOf="@+id/gameBoardTxtStatusTop"
+        app:layout_constraintBottom_toTopOf="@+id/gameBoardTxtStatusDown"
+        app:layout_constraintLeft_toRightOf="@id/gameBoardTxtStatusLeft"
+        app:layout_constraintRight_toLeftOf="@id/gameBoardTxtStatusRight"
+        android:importantForAutofill="no"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtStatusTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.85"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtStatusDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.89"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtStatusLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.21"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/gameBoardTxtStatusRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.86"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/boardLetterLayoutTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardLetterLayoutDown"
+        app:layout_constraintLeft_toRightOf="@id/boardLetterLayoutLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardLetterLayoutRight">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/layout_boardletterpool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap"
+            app:alignItems="center"
+            app:justifyContent="center"
+            app:alignContent="center">
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </ScrollView>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardLetterLayoutTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.9"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardLetterLayoutDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.99"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardLetterLayoutLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.21"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardLetterLayoutRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.86"
+        android:orientation="vertical" />
+
+
+    <ImageView android:id="@+id/imgvw_surrender"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:backgroundTint="@color/white"
+        android:padding="2sp"
+
+        android:src="@drawable/ic_baseline_flag_circle_24"
+
+        app:layout_constraintTop_toBottomOf="@+id/boardSurrenderImgvwTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardSurrenderImgvwDown"
+        app:layout_constraintLeft_toRightOf="@id/boardSurrenderImgvwLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardSurrenderImgvwRight"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardSurrenderImgvwTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.845"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardSurrenderImgvwDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.895"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardSurrenderImgvwLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.87"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardSurrenderImgvwRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.99"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+
+    <ImageView android:id="@+id/imgvw_clear"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:backgroundTint="@color/white"
+        android:padding="2sp"
+
+        android:src="@drawable/ic_baseline_delete_24"
+
+        app:layout_constraintTop_toBottomOf="@+id/boardDeleteImgvwTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardDeleteImgvwDown"
+        app:layout_constraintLeft_toRightOf="@id/boardDeleteImgvwLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardDeleteImgvwRight"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardDeleteImgvwTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.895"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardDeleteImgvwDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.945"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardDeleteImgvwLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.87"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardDeleteImgvwRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.99"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
+
+    <ImageView android:id="@+id/imgvw_play"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:backgroundTint="@color/white"
+        android:padding="2sp"
+
+        android:src="@drawable/ic_baseline_play_circle_filled_24"
+
+        app:layout_constraintTop_toBottomOf="@+id/boardPlayImgvwTop"
+        app:layout_constraintBottom_toTopOf="@+id/boardPlayImgvwDown"
+        app:layout_constraintLeft_toRightOf="@id/boardPlayImgvwLeft"
+        app:layout_constraintRight_toLeftOf="@id/boardPlayImgvwRight"/>
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayImgvwTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.945"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayImgvwDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.995"
+        android:orientation="horizontal" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayImgvwLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.87"
+        android:orientation="vertical" />
+    <androidx.constraintlayout.widget.Guideline android:id="@+id/boardPlayImgvwRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.99"
+        android:orientation="vertical" />
+    <!-- ************************************ VIEW BOUNDARY HERE -->
+
 
 
 

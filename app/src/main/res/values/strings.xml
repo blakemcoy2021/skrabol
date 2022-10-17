@@ -24,4 +24,11 @@
     <string name="game_points5">Five (5) Points:</string>
     <string name="game_points8">Eight (8) Points:</string>
     <string name="game_points10">Ten (10) Points:</string>
+
+    <string name="board_turnlbl">Turn #:</string>
+    <string name="board_points1">Player 1 Points:</string>
+    <string name="board_pass">Pass</string>
+    <string name="board_draw">Draw</string>
+    <string name="board_swap">Swap</string>
+    <string name="board_status">Game Started! 1st Turn, Create Word</string>
 </resources>
