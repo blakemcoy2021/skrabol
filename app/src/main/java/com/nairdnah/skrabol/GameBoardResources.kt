@@ -1,5 +1,7 @@
 package com.nairdnah.skrabol
 
+import android.graphics.drawable.Drawable
+
 class GameBoardResources {
 
     /** triple word score */
@@ -123,4 +125,40 @@ class GameBoardResources {
         )
     }
 
+    private val lettereqs = arrayOf(
+            'A','B','C','D',
+            'E','F','G','H',
+            'I','J','K','L',
+            'M','N','O','P',
+            'Q','R','S','T',
+            'U','V','W','X',
+            'Y','Z')
+    fun getLetterEquivalent() : Array<Char> {
+        return lettereqs
+    }
+
+    private val lettersymbols = arrayOf(
+            R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d,
+            R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h,
+            R.drawable.i, R.drawable.j, R.drawable.k, R.drawable.l,
+            R.drawable.m, R.drawable.n, R.drawable.o, R.drawable.p,
+            R.drawable.q, R.drawable.r, R.drawable.s, R.drawable.t,
+            R.drawable.u, R.drawable.v, R.drawable.w, R.drawable.x,
+            R.drawable.y, R.drawable.z
+    )
+    fun getLettersymbols() : Array<Int> {
+        return lettersymbols
+    }
+    private val lettersymhigh = arrayOf(
+            R.drawable.a_hl, R.drawable.b_hl, R.drawable.c_hl, R.drawable.d_hl,
+            R.drawable.e_hl, R.drawable.f_hl, R.drawable.g_hl, R.drawable.h_hl,
+            R.drawable.i_hl, R.drawable.j_hl, R.drawable.k_hl, R.drawable.l_hl,
+            R.drawable.m_hl, R.drawable.n_hl, R.drawable.o_hl, R.drawable.p_hl,
+            R.drawable.q_hl, R.drawable.r_hl, R.drawable.s_hl, R.drawable.t_hl,
+            R.drawable.u_hl, R.drawable.v_hl, R.drawable.w_hl, R.drawable.x_hl,
+            R.drawable.y_hl, R.drawable.z_hl
+    )
+    fun getLettersymhigh() : Array<Int> {
+        return lettersymhigh
+    }
 }
