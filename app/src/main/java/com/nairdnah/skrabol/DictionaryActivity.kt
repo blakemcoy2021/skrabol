@@ -185,11 +185,13 @@ class DictionaryActivity : AppCompatActivity() {
 
         val jsonRaw: String?
         try {
-            val istream : InputStream = assets.open("sampledict.json")
+            val istream : InputStream = assets.open("chichayyy.json")
             jsonRaw = istream.bufferedReader().use {
                 it.readText()
             }
             val jsonPreArr = JSONArray(jsonRaw)
+
+            Log.d("Dictionary Length:", jsonPreArr.length().toString())
 
             for (x in 0 until jsonPreArr.length()) {
 

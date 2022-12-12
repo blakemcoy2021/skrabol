@@ -18,7 +18,7 @@ class GameBoardActivity : AppCompatActivity() {
 
     private val tiles_src = GameBoardResources()
     private var isFirstTurn : Boolean = true
-    private var isBoardEnable : Boolean = false
+        private var isBoardEnable : Boolean = false
     private var isTilesEnable : Boolean = true
 
     private var tileSelectionOrigin = 0
@@ -45,9 +45,14 @@ class GameBoardActivity : AppCompatActivity() {
 
     private lateinit var layoutBoardLetterPool : FlexboxLayout
 
+        private lateinit var sqLiteHelper: SQLiteHelper
+        private var selectedTilesToPlay : ArrayList<Button> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_board)
+
+            sqLiteHelper = SQLiteHelper(this)
 
         initView()
         generateBoardTiles()
@@ -65,10 +70,19 @@ class GameBoardActivity : AppCompatActivity() {
                 Toast.makeText(this, "Create a word first to play!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+//            if (checkWordExist(currWord) == -1) {
+//                Toast.makeText(this, "There is no such word found! Restored Tiles", Toast.LENGTH_SHORT).show()
+//                for (btn in selectedTilesToPlay) {
+//                    layoutBoardLetterPool.addView(btn)
+//                }
+//                inputTurnResetter()
+//                return@setOnClickListener
+//            }
+
 
             isTilesEnable = false
-            isBoardEnable = true
-            wordToPlay = txtvwBoardStatus.text.toString()
+                // isBoardEnable = true
+            wordToPlay = currWord
             if (isFirstTurn) {
                 tileSelectionOrigin = 113
             }
@@ -92,60 +106,85 @@ class GameBoardActivity : AppCompatActivity() {
                     // Toast.makeText(this, validBoardTilePlacers.toString(), Toast.LENGTH_SHORT).show()
 
                 /** highlight those buttons */
-                for (i in validBoardTilePlacers) {
-                    var beenTileValued = false
-                    if (!beenTileValued) {
-                        for (j in tiles_src.getTileTripleWord()) {
-                            if ((i+1) == j) {
-                                findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_tripleword_hl))
-                                beenTileValued = true
-                                break
-                            }
-                        }
-                    }
-                    if (!beenTileValued) {
-                        for (j in tiles_src.getTileTripleLetter()) {
-                            if ((i+1) == j) {
-                                findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_tripleword_hl))
-                                beenTileValued = true
-                                break
-                            }
-                        }
-                    }
-                    if (!beenTileValued) {
-                        for (j in tiles_src.getTileDoubleWord()) {
-                            if ((i+1) == j) {
-                                findViewById<ImageView>(idsOfBoardTiles[i]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_doubleword_hl))
-                                beenTileValued = true
-                                break
-                            }
-                        }
-                    }
-                    if (!beenTileValued) {
-                        for (j in tiles_src.getTileDoubleLetter()) {
-                            if ((i+1) == j) {
-                                findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_doubleletter_hl))
-                                beenTileValued = true
-                                break
-                            }
-                        }
-                    }
-                    if (!beenTileValued) {
-                        if ((i+1) == 113) {
-                            findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_startcenter_hl))
-                        }
-                        else {
-                            findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_plain_hl))
-                        }
-                    }
-
-
-                }
+                redrawTileSelectionEnd(true)
             }
 
         }
 
     }
+
+    private fun inputTurnResetter() {
+        val defaultText = getString(R.string.board_status)
+       if (turnCounter == 1) {
+            txtvwBoardStatus.text = defaultText
+        }
+        else {
+            val idxTurn = defaultText.indexOf("turn", 0, ignoreCase = true)
+            var newStatus = defaultText.substring(idxTurn)
+            newStatus = "$turnCounter $newStatus"
+            txtvwBoardStatus.text = newStatus
+        }
+
+    }
+
+    private fun redrawTileSelectionEnd(isHighlight : Boolean) {
+        val tripleWordArr = arrayOf(R.drawable.tile_tripleword, R.drawable.tile_tripleword_hl)
+        val tripleLetterArr = arrayOf(R.drawable.tile_tripleletter, R.drawable.tile_tripleletter_hl)
+        val doubleWordArr = arrayOf(R.drawable.tile_doubleword, R.drawable.tile_doubleword_hl)
+        val doubleLetterArr = arrayOf(R.drawable.tile_doubleletter, R.drawable.tile_doubleletter_hl)
+        val starArr = arrayOf(R.drawable.tile_startcenter, R.drawable.tile_startcenter_hl)
+        val plainArr = arrayOf(R.drawable.tile_plain, R.drawable.tile_plain_hl)
+
+        var mode = 0
+        if (isHighlight) {
+            mode = 1
+        }
+
+        for (i in validBoardTilePlacers) { // Log.d("@#@#@#@#@#@", idsOfBoardTiles[i-1].toString())
+            var beenFound = false
+            if (!beenFound) {
+                for (j in tiles_src.getTileTripleWord()) {
+                    if (i == j) {
+                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, tripleWordArr[mode]))
+                        beenFound = true
+                    }
+                }
+            }
+            if (!beenFound) {
+                for (j in tiles_src.getTileTripleLetter()) {
+                    if (i == j) {
+                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, tripleLetterArr[mode]))
+                        beenFound = true
+                    }
+                }
+            }
+            if (!beenFound) {
+                for (j in tiles_src.getTileDoubleWord()) {
+                    if (i == j) {
+                        findViewById<ImageView>(idsOfBoardTiles[i]).setImageDrawable(ContextCompat.getDrawable(applicationContext, doubleWordArr[mode]))
+                        beenFound = true
+                    }
+                }
+            }
+            if (!beenFound) {
+                for (j in tiles_src.getTileDoubleLetter()) {
+                    if (i == j) {
+                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, doubleLetterArr[mode]))
+                        beenFound = true
+                    }
+                }
+            }
+            if (!beenFound) {
+                if (i == 113) {
+                    findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, starArr[mode]))
+                }
+                else {
+                    findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, plainArr[mode]))
+                }
+            }
+        }
+    }
+
 
     private fun generateBoardTiles() {
 
@@ -169,8 +208,8 @@ class GameBoardActivity : AppCompatActivity() {
             }
             tilebtn.id = id
 
-            idsOfBoardTiles.add(id) /**some_var_name_here = findViewById(id) :: could be in json in the future */
-                Log.d("@#@#@#@#@$tag", tilebtn.id.toString())
+            idsOfBoardTiles.add(id) /** some_var_name_here = findViewById(id) :: could be in json in the future */
+                Log.d("_#_#_#_$tag", tilebtn.id.toString())
 
             tilebtn.apply {
                 layoutParams = params
@@ -230,7 +269,8 @@ class GameBoardActivity : AppCompatActivity() {
             tilebtn.setOnClickListener(View.OnClickListener {
                 // val key = tilebtn.text.toString() /* only valid if it was not an ImageView as button */
 
-                if (isBoardEnable) {
+                // if (isBoardEnable) {
+
                     if (tileSelectionOrigin == 0) {
                         tileSelectionOrigin = tileval.toInt()
                         txtvwBoardStatus.text = "$wordToPlay, tile select end of word"
@@ -367,58 +407,16 @@ class GameBoardActivity : AppCompatActivity() {
                             val idx = boardResources.getLetterEquivalent().indexOf(wordToPlayArr[i])
                             tilesImageToFill.add(boardResources.getLettersymbols()[idx])
                         }
+                        /** pos 0,1 is good orientation already */
+                        if (pos == 2 || pos == 3) {
+                            tilesImageToFill.reverse()
+                        }
 
                         /** unhighlight those buttons */
-                        for (i in validBoardTilePlacers) {
-                            var beenTileValued = false
-                            if (!beenTileValued) {
-                                for (j in tiles_src.getTileTripleWord()) {
-                                    if ((i+1) == j) {
-                                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_tripleword))
-                                        beenTileValued = true
-                                        break
-                                    }
-                                }
-                            }
-                            if (!beenTileValued) {
-                                for (j in tiles_src.getTileTripleLetter()) {
-                                    if ((i+1) == j) {
-                                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_tripleword))
-                                        beenTileValued = true
-                                        break
-                                    }
-                                }
-                            }
-                            if (!beenTileValued) {
-                                for (j in tiles_src.getTileDoubleWord()) {
-                                    if ((i+1) == j) {
-                                        findViewById<ImageView>(idsOfBoardTiles[i]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_doubleword))
-                                        beenTileValued = true
-                                        break
-                                    }
-                                }
-                            }
-                            if (!beenTileValued) {
-                                for (j in tiles_src.getTileDoubleLetter()) {
-                                    if ((i+1) == j) {
-                                        findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_doubleletter))
-                                        beenTileValued = true
-                                        break
-                                    }
-                                }
-                            }
-                            if (!beenTileValued) {
-                                if ((i+1) == 113) {
-                                    findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_startcenter))
-                                }
-                                else {
-                                    findViewById<ImageView>(idsOfBoardTiles[i-1]).setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.tile_plain))
-                                }
-                            }
+                        redrawTileSelectionEnd(false)
 
-
-                        }
                         validBoardTilePlacers.clear()
+
                         /** place those letters on board */
                         for (i in tilesPosToFill.indices) {
                             val imgtilebtn = findViewById<ImageView>(tilesPosToFill[i])
@@ -428,17 +426,15 @@ class GameBoardActivity : AppCompatActivity() {
 
 
                         isFirstTurn = false
-                        isBoardEnable = false
+                            // isBoardEnable = false
                         isTilesEnable = true
                             imgvwBoardPlay.isEnabled = true
                             tileSelectionOrigin = 0
                         turnCounter++
-                        val defaultText = getString(R.string.board_status)
-                        val idxTurn = defaultText.indexOf("turn", 0, ignoreCase = true)
+
+                        inputTurnResetter()
+
                         // Toast.makeText(applicationContext, "index to substring $idxTurn", Toast.LENGTH_SHORT).show()
-                        var newStatus = defaultText.substring(idxTurn)
-                        newStatus = "$turnCounter $newStatus"
-                        txtvwBoardStatus.text = newStatus
 
                         layoutBoardLetterPool.removeAllViews()
                         generateButtonTiles()
@@ -446,10 +442,14 @@ class GameBoardActivity : AppCompatActivity() {
                         val turnUpdater = txtvwBoardTurn.text.toString().split(": ")[0] + ": " + turnCounter.toString()
                         txtvwBoardTurn.text = turnUpdater
                     }
-                }
-                else {
+
+                // }
+                // else {
+
+                    /** display tile number while disabled */
                     Toast.makeText(this, tileval, Toast.LENGTH_SHORT).show()
-                }
+
+                // }
 
             })
 
@@ -479,6 +479,7 @@ class GameBoardActivity : AppCompatActivity() {
                     }
                     currWord += key
                     txtvwBoardStatus.text = currWord
+                    selectedTilesToPlay.add(tilebtn)
                     layoutBoardLetterPool.removeView(tilebtn)
                 }
 
@@ -517,6 +518,58 @@ class GameBoardActivity : AppCompatActivity() {
             layoutBoardLetterPool.addView(tilebtn)
         }
     }
+
+
+
+
+
+    private fun checkWordExist(word: String): Int {
+        val dictlist = sqLiteHelper.onGetDataSpecific(word, true)
+        if (dictlist.size != 0) {
+            /**
+             * Word is Existing in the Records,
+             * dictlist[0].details
+             * meaning of the `word`
+             **/
+
+            return wordPointer(word)
+
+        }
+        else {
+            return -1
+        }
+
+    }
+    private fun wordPointer(word: String): Int {
+        val tilematrix = tiles_src.getLetterMatrix()
+        val pointmatrix = tiles_src.getPointsMatrix()
+        var points = 0
+        for (i in word.indices) {
+
+            for (j in tilematrix.indices) {
+                var isBreakAtMatrix = false
+
+                for (k in tilematrix[j].indices) {
+                    val letterOfWord = word[i].toString().toLowerCase()
+                    val fromMatrix = tilematrix[j][k].toString().toLowerCase()
+
+                    if (letterOfWord == fromMatrix) {
+                        isBreakAtMatrix = true
+                        points += pointmatrix[j]
+                        break;
+                    }
+                }
+                if (isBreakAtMatrix) {
+                    break
+                }
+            }
+
+        }
+
+        return points
+    }
+
+
 
     private fun initView() {
         layoutCheckerBoard = findViewById(R.id.layout_checkerboard)

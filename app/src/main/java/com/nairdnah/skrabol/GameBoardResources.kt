@@ -110,6 +110,17 @@ class GameBoardResources {
     private val letter_pt10 = arrayOf('Q', 'Z')
     private val letter_ctr10 = arrayOf(1, 1)
 
+    fun getLetterMatrix(): Array<Array<Char>> {
+        return arrayOf(letter_pt1, letter_pt2,
+                        letter_pt3, letter_pt4,
+                        letter_pt5, letter_pt8,
+                        letter_pt10)
+    }
+    fun getPointsMatrix(): Array<Int> {
+        return arrayOf(1,2,3,4,5,8,10)
+    }
+
+
     fun getLetterPoint1(): Array<Char> {
         return letter_pt1
     }
